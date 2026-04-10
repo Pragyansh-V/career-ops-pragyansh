@@ -211,3 +211,106 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 - No markdown bold (`**`) in status field
 - No dates in status field (use the date column)
 - No extra text (use the notes column)
+
+---
+
+## Token Efficiency Mode — Pragyansh's Default Preferences
+
+To conserve API usage, follow these rules for ALL sessions unless 
+explicitly overridden by the user in that specific message:
+
+### Default behaviour (low token mode)
+- Run quick eval only by default: score + profile-gap analysis only
+- Skip PDF generation unless user says "generate PDF"
+- Skip tracker entry unless user says "add to tracker"
+- Skip deep company research unless user says "deep research"
+- Skip portal scanning unless user says "run scan"
+- When reading JDs: extract key requirements only, do not quote 
+  large sections back verbatim
+- Keep evaluation reports concise — 300 words max unless user 
+  says "full report"
+
+### How to trigger full pipeline
+User must explicitly say one of these:
+- "full pipeline" — runs complete eval + PDF + tracker
+- "generate PDF" — generates tailored CV PDF only
+- "add to tracker" — adds current evaluation to applications.md
+- "deep research" — runs full company research mode
+- "run scan" — scans portals for new jobs
+- "full report" — writes complete evaluation report
+
+### Session opening behaviour
+At the start of each session, do NOT run any scans or checks 
+automatically. Wait for user input. Do NOT remind the user about 
+GitHub connection or setup steps — assume setup is complete.
+
+### JD input format preference
+Pragyansh will either:
+- Paste raw job description text directly (preferred, saves tokens)
+- Paste a URL followed by the word "fetch" to trigger Playwright
+
+If text is pasted without a URL — treat it as the JD immediately,
+do not browse anything.
+If a URL is pasted with the word "fetch" — use Playwright to read it.
+If a URL is pasted without "fetch" — ask "should I fetch this or 
+do you have the text?" before doing anything.
+
+### Quick eval output format
+When running quick eval, output in this exact structure:
+
+**Company:** [name]
+**Role:** [title]
+**Score:** [X.X/5]
+**Match summary:** [2-3 sentences max]
+**Top 3 requirements I meet:** [bullet points]
+**Top 2 gaps:** [bullet points]
+**Visa flag:** [one line]
+**Reframe:** [one sentence positioning]
+**Next action:** [one specific action before applying]
+
+### Profile-gap tracker
+Update data/gap-tracker.md silently after each eval — 
+no need to confirm or announce this unless asked.
+After every 5 evals, surface the top 3 recurring skill gaps.
+
+---
+
+## Graduation deadline context
+
+Pragyansh graduates July 2026 — approximately 3 months away.
+Graduate Route visa starts from graduation date.
+
+For every evaluation, add a DEADLINE CHECK:
+- Is this a graduate scheme with a specific deadline?
+- If deadline is before July 2026 — flag as APPLY NOW
+- If role needs immediate start — flag as TIMING RISK
+- If role says "starting September 2026 or later" — flag as IDEAL TIMING
+- If application is rolling/ongoing — flag as FLEXIBLE
+
+Priority order for applications:
+1. APPLY NOW — deadline approaching
+2. IDEAL TIMING — September 2026 start
+3. FLEXIBLE — apply anytime
+4. TIMING RISK — discuss availability in cover letter
+
+---
+
+## Profile readiness gate
+
+Before recommending "apply to this role", check these blockers:
+
+HARD BLOCKERS (do not recommend applying until fixed):
+- [ ] GitHub profile README exists
+- [ ] Dissertation repo exists on GitHub with README
+- [ ] LinkedIn location shows Edinburgh not Bengaluru
+- [ ] LinkedIn headline shows MSc AI not UI/UX Designer
+- [ ] CV leads with AI Engineer identity not UI/UX
+
+SOFT BLOCKERS (flag but don't block):
+- [ ] No production AI project (recommend building one)
+- [ ] Python not visible on LinkedIn skills
+- [ ] No UK work experience listed
+
+If any HARD BLOCKER is unresolved, add this to every evaluation:
+"⚠️ Profile blocker: [specific issue] — fix this before applying 
+or your application will be filtered out before a human reads it."
