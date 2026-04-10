@@ -1,6 +1,6 @@
 # Pragyansh Vardhan
 
-Edinburgh, United Kingdom | 15pragyansh@gmail.com | linkedin.com/in/pragyanshvardhan
+Edinburgh, United Kingdom | Email: [available on request] | Phone: [available on request] | linkedin.com/in/pragyanshvardhan
 
 ---
 
