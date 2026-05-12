@@ -304,3 +304,23 @@ O simplemente pega una URL o descripcion de oferta -- career-ops la detecta y ej
 [![Website](https://img.shields.io/badge/santifer.io-000?style=for-the-badge&logo=safari&logoColor=white)](https://santifer.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/santifer)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hola@santifer.io)
+
+> Built by someone who used it to evaluate 740+ job offers, generate 
+> 100+ tailored CVs, and land a Head of Applied AI role. 
+> [Read the full case study](https://santifer.io/career-ops-system).
+
+> Forked and extended by Pragyansh Vardhan (MSc AI, Heriot-Watt Edinburgh) 
+> for the UK graduate AI job market. Extended with UK visa tracking, 
+> profile gap analysis, graduation deadline awareness, and token 
+> efficiency mode.
+> Original system by [santifer](https://github.com/santifer/career-ops).
+
+## About this fork
+
+Forked and extended by **Pragyansh Vardhan** — MSc AI student at 
+Heriot-Watt University, Edinburgh. Customised for the UK graduate 
+AI job market with additional modes for visa tracking, profile gap 
+analysis, and graduation deadline awareness.
+
+[GitHub](https://github.com/Pragyansh-V) · 
+[LinkedIn](https://linkedin.com/in/pragyanshvardhan)
